@@ -1,12 +1,6 @@
 # **Revent Assignment (To-Do App)**
 Task Application
 
-
-
-
-
-# **Stock Market Application**
-
 ## Introduction
 This Spring Boot Web Service Application is for Stock Management, this application provides a user-friendly interface to interact with stock-related data, offering essential operations such as creating new stock data, retrieving all stock information, finding opening range breakouts, and merging candle data.
 the key features of this application are
