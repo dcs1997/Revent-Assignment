@@ -55,7 +55,8 @@ later add the tasks.
 Update task's states when completed.
 use next button to browse through all the tasks created.
 Then By Using the GET method user can fetch data with respect to their needs.
-<img width="1440" alt="image" src="https://github.com/dcs1997/Investo-Bull/assets/107552890/88c067ed-fdea-4b82-b648-db96aa6911d7">
+<img width="1440" alt="image" src="![image](https://github.com/dcs1997/Revent-Assignment/assets/107552890/11316dab-6b4c-415b-8167-ab3d5c231782)">
+<img width="1440" alt="image" src="![image](https://github.com/dcs1997/Revent-Assignment/assets/107552890/ec01159d-948e-470e-9096-168d89a7167e)">
 
 
 
