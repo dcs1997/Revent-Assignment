@@ -1,6 +1,8 @@
 # **Revent Assignment (To-Do App)**
 Task Application
 
+
+
 ## Introduction
 This Spring Boot + React Application is build for a Task Management System, this application provides a user-friendly interface. offering essential operations such as SignUp/LogIn for a  user. further user can creating new Tasks, update it's status when done, delete the task when it's work is done, and also with the help of pagination see all of his tasks.
 
@@ -55,8 +57,8 @@ later add the tasks.
 Update task's states when completed.
 use next button to browse through all the tasks created.
 Then By Using the GET method user can fetch data with respect to their needs.
-<img width="1440" alt="image" src="![image](https://github.com/dcs1997/Revent-Assignment/assets/107552890/11316dab-6b4c-415b-8167-ab3d5c231782)">
-<img width="1440" alt="image" src="![image](https://github.com/dcs1997/Revent-Assignment/assets/107552890/ec01159d-948e-470e-9096-168d89a7167e)">
+<img width="1440" alt="Screenshot 2023-10-12 at 5 30 42 PM" src="https://github.com/dcs1997/Revent-Assignment/assets/107552890/73af70d8-28ee-4563-aa51-d0ad435200ac">
+<img width="1440" alt="Screenshot 2023-10-12 at 5 30 26 PM" src="https://github.com/dcs1997/Revent-Assignment/assets/107552890/2903055d-4b88-4018-9974-f9f614a9fb4a">
 
 
 
