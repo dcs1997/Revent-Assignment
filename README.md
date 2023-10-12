@@ -2,33 +2,37 @@
 Task Application
 
 ## Introduction
-This Spring Boot Web Service Application is for Stock Management, this application provides a user-friendly interface to interact with stock-related data, offering essential operations such as creating new stock data, retrieving all stock information, finding opening range breakouts, and merging candle data.
+This Spring Boot + React Application is build for a Task Management System, this application provides a user-friendly interface. offering essential operations such as SignUp/LogIn for a  user. further user can creating new Tasks, update it's status when done, delete the task when it's work is done, and also with the help of pagination see all of his tasks.
+
 the key features of this application are
 
-Create Stock Data:
-This feature is used for creating Stock data
+SignUp/LogIn:
+This feature is used for SignUp for new users & LogIn for Existing one. 
 
-Get All Stock Data:
-This feature fetches all the data which is inserted inside the database
+Create Task:
+This feature is used for creating Tasks.
 
-Opening Range Breakout Finder:
-This feature uses Opening Breakout Range and gives information to the user about how volatile the market is.
+Update Task:
+This feature is used to change the status from Incomplete to Complete.
 
-Merge Candle's Data:
+Delete Task:
+This feature is used for deleting a certain Tasks.
+
+Pagination:
 This feature allows the user to fetch data with respect to time so the user can merge data with specific time intervals.
 
 
 
 ## Deployed App
-[https://deployed-site.whatever](https://github.com/dcs1997/Investo-Bull)
+
 
 
 
 ## Features
 List out the key features of your application.
--  To get All Stocks Information
--  To find the highest/Lowest Opening Range Breakout (ORB)
--  Merge the stocks with respect to time.
+-  SignUp/LogIn
+-  Create and Update data
+-  Pagination
 
 
 
@@ -44,27 +48,41 @@ Note: Spring Security can also be added to this program in the future.
 
 ## Usage
 Provide instructions and examples on how to use your project.
-Open Postman
-Fire the POST request and add data respectively
+Open VS-code and launch the front end app.
+Open STS and launch the beackend app.
+Through any browser You can signUp/LogIn as user.
+later add the tasks.
+Update task's states when completed.
+use next button to browse through all the tasks created.
 Then By Using the GET method user can fetch data with respect to their needs.
 <img width="1440" alt="image" src="https://github.com/dcs1997/Investo-Bull/assets/107552890/88c067ed-fdea-4b82-b648-db96aa6911d7">
 
 
 
-## API Endpoints
+## API Endpoints for User
 
-POST/http://localhost:8080/Stocks - To create a new item
+POST/http://localhost:8080/Users - To create/SignIn a new user
 
-GET/http://localhost:8080/AllStocks - To retrieve all items
+POST/http://localhost:8080/login - To logIn as a user
 
-GET/ http://localhost:8080/ORB/60 -  To find the ORB
+DELETE/http://localhost:8080/Users/52 -  To delete the user
 
-GET/http://localhost:8080/mergeStocks/60 -  Merge stocks with respect to time
+## API Endpoints for Tasks
 
+POST/http://localhost:8080/Tasks/1(Note this is User_Id) - To create a new Task.
 
+GET/http://localhost:8080/Tasks/1(Note this is User_Id)/page?PageNumber=0 - for pagination
+
+PUT/http://localhost:8080/Tasks/1 - To Update the status of the task.
+
+DELETE/http://localhost:8080/Tasks/1 -  To delete the task.
 
 ## Technology Stack
 - Mysql
 - SpringBoot
 - RestAPI
+- React
+- CSS
+- HTML
+- JavaScript
 
