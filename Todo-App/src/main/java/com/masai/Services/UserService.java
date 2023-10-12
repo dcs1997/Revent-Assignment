@@ -13,6 +13,8 @@ public interface UserService {
 	 public List<User> getAllUsers(Integer pageNumber) throws UserException;
 	 
 	 public String deleteUser(Integer id) throws UserException;
+
+	public User authenticateUser(User user)throws UserException;
 	
 	
 

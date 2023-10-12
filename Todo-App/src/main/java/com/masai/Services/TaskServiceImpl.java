@@ -1,6 +1,7 @@
 package com.masai.Services;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,18 +88,31 @@ public class TaskServiceImpl implements TaskService {
 
 		User us = usrRepo.findById(id).orElseThrow(() -> new UserException("Please enter a valid user id"));
 
-		List<Task> taskList = tRepo.findByUsr(us);
+//		List<Task> taskList = tRepo.findByUsr(us);
+//		
+//		Integer startPoint = (PageNumber) * 3;
+//		Integer endPoint = startPoint + 2;
+//		
+//		List<Task> res = new ArrayList<>();
+//		
+//		while(startPoint < taskList.size()  && startPoint <= endPoint) {
+//			res.add(taskList.get(startPoint++));
+//		}
+//		
+//		return res;
 		
-		Integer startPoint = (PageNumber) * 3;
-		Integer endPoint = startPoint + 2;
 		
-		List<Task> res = new ArrayList<>();
-		
-		while(startPoint < taskList.size()  && startPoint <= endPoint) {
-			res.add(taskList.get(startPoint++));
-		}
-		
-		return res;
+		 List<Task> taskList = tRepo.findByUsr(us);
+		    
+		    int tasksPerPage = 3;
+		    int startIndex = PageNumber * tasksPerPage;
+		    int endIndex = Math.min(startIndex + tasksPerPage, taskList.size());
+
+		    if (startIndex < taskList.size()) {
+		        return taskList.subList(startIndex, endIndex);
+		    } else {
+		        return Collections.emptyList();
+		    }
 
 	}
 

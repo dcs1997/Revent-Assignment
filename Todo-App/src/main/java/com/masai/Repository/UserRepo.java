@@ -11,7 +11,7 @@ import com.masai.Model.User;
 
 public interface UserRepo  extends JpaRepository<User, Integer>, PagingAndSortingRepository<User, Integer>{
 	
-	
+	User findByEmail(String email);
 
 
 }

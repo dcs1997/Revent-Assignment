@@ -52,6 +52,34 @@ public class UserServiceImpl  implements UserService{
 		return "User deleted successfully!!!";
 	}
 
+	@Override
+	public User authenticateUser(User user) throws UserException {
+		
+		 User storedUser = userRepo.findByEmail(user.getEmail());
+
+		    if (storedUser == null) {
+		        // User not found in the database
+		        throw new UserException("User not found");
+		    }
+
+		    // Verify the provided password with the stored password (you should use a secure password hashing method)
+		    if (!isPasswordMatch(user.getPassword(), storedUser.getPassword())) {
+		        // Passwords do not match
+		        throw new UserException("Incorrect password");
+		    }
+
+		    // Authentication successful
+		    return storedUser;
+		
+		
+		
+		
+	}
+
+	private boolean isPasswordMatch(String providedPassword, String storedPassword) {
+	   
+	    return providedPassword.equals(storedPassword);
+	}
 	
 
 }

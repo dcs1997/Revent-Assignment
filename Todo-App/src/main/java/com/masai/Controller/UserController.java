@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import com.masai.Model.User;
 import com.masai.Services.UserService;
 
 import jakarta.validation.Valid;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class UserController {
 
@@ -34,9 +35,21 @@ public class UserController {
 		
 		User save = userServ.addUser(user);
 		
-		return new ResponseEntity<>(save, HttpStatus.OK);
+		return new ResponseEntity<>(save, HttpStatus.CREATED);
 		
 	}
+	
+	
+	@PostMapping("/login")
+    public ResponseEntity<User> loginUser(@RequestBody User user) {
+        try {
+            
+            User authenticatedUser = userServ.authenticateUser(user);
+            return new ResponseEntity<>(authenticatedUser, HttpStatus.OK);
+        } catch (UserException e) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+    }
 	
 	@GetMapping("/Users")
 	public ResponseEntity <List<User>> ListOfUser(@RequestParam @Valid Integer pageNumber) throws UserException{
