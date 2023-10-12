@@ -8,10 +8,6 @@ import com.masai.Model.Task;
 import com.masai.Model.User;
 
 public interface TaskRepo  extends JpaRepository<Task, Integer>, PagingAndSortingRepository<Task, Integer>{
-
 	
-
-	
-
 	List<Task> findByUsr(User us);
 }

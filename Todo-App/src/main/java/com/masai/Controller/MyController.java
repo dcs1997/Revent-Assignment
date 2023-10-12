@@ -25,51 +25,55 @@ import jakarta.validation.Valid;
 @RestController
 public class MyController {
 
+		
 	
 	@Autowired
-	private TaskService tServ;
+	private TaskService taskServ;
+	
+	
+	
+	
 	
 	
 	@PostMapping("/Tasks/{id}")
 	public ResponseEntity<String> createTask(@RequestBody @Valid Task task, @PathVariable Integer id) throws UserException{
 		
-		String save = tServ.addTask(task, id);
+		String save = taskServ.addTask(task, id);
 		
 		return new ResponseEntity<>(save, HttpStatus.OK);
 		
 	}
 	
-	@GetMapping("/Tasks/{id}")
-	public ResponseEntity <List<Task>> ListOfTasks( @PathVariable Integer id) throws TaskException, UserException{
-		
-		List<Task> st = tServ.getAllTasks(id);
-		return new ResponseEntity<>(st, HttpStatus.OK);
-	}
 	
 	
 	
 	@GetMapping("/Tasks/{userId}/page")
 	public ResponseEntity <List<Task>> ListOfTasksUsingPaginationAndSorting( @PathVariable Integer userId, @RequestParam Integer pageNumber) throws TaskException, UserException{
 		
-		List<Task> st = tServ.getAllTasksUsingPagination(userId, pageNumber);
+		List<Task> st = taskServ.getAllTasksUsingPagination(userId, pageNumber);
+		
 		return new ResponseEntity<>(st, HttpStatus.OK);
 	}
+	
+	
 	
 	
 	@PutMapping("/Tasks/{id}")
 	public ResponseEntity<Task> UpdateTask(@RequestBody @Valid Task task, @PathVariable Integer id) throws UserException, TaskException{
 		
-		Task save = tServ.UpdateTask(task, id);
+		Task save = taskServ.UpdateTask(task, id);
 		
 		return new ResponseEntity<>(save, HttpStatus.OK);
 		
 	}
 	
 	
+	
+	
 	@DeleteMapping("/Tasks/{id}")
 	public ResponseEntity<String> deleteTask(@PathVariable @Valid Integer id) throws  TaskException{
 		
-		String str = tServ.deleteTask(id);
+		String str = taskServ.deleteTask(id);
 		
 		return new ResponseEntity<>(str, HttpStatus.OK);
 	}

@@ -27,13 +27,12 @@ public class User {
 	@Pattern(regexp = "[A-Za-z]+", message = "Name must not contain numbers or special characters")
 	private String name;
 	
-	 @Column(unique = true) 
-	 @NotNull
-	private String email;
+	@Column(unique = true) 
+	@NotNull
+    private String email;
 	
-	 @NotNull
-//	 @Pattern(regexp ="((?=.[!@#$&])(?=.[A-Z])(?=.[a-z])(?=.*[0-9]).{8,15})", message = "Password should be alphanumeric and must contain 6-12 characters having at least one special character, one upper case, one lowercase, and one digit.")
-//	    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @NotNull
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String password;
 	
 	@OneToMany(mappedBy = "usr", cascade = CascadeType.ALL)
